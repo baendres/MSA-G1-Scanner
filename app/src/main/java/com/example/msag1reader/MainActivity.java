@@ -105,7 +105,6 @@ public class MainActivity extends Activity implements NfcAdapter.ReaderCallback 
         Map<Integer, byte[]> blocks = new LinkedHashMap<>();
         nfcV.connect();
         try {
-            nfcV.setTimeout(1500);
             // ICODE SLIX used in the observed MSA tags has 28 x 4-byte user blocks.
             // Read each block independently so a marginal scan can still return useful data.
             for (int block = 0; block <= 0x1B; block++) {
